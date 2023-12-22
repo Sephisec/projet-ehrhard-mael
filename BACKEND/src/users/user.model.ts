@@ -1,10 +1,20 @@
-import { Column, DataType, Model, Table } from 'sequelize-typescript';
+import {
+  Column,
+  DataType,
+  Model,
+  PrimaryKey,
+  Table,
+} from 'sequelize-typescript';
 
 @Table({
   modelName: 'utilisateurs',
   timestamps: false,
 })
 export class User extends Model {
+  @PrimaryKey
+  @Column
+  id: number;
+
   @Column({
     type: DataType.TEXT,
     field: 'prenom',
