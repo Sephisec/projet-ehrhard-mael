@@ -20,7 +20,6 @@ export class AuthService {
       })
       .pipe(
         tap((res: any) => {
-          console.log(res.access_token);
           localStorage.setItem(TOKEN_KEY_NAME, res.access_token);
         }),
       );
