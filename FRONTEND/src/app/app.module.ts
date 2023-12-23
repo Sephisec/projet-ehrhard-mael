@@ -3,10 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { HttpClientModule } from "@angular/common/http";
+import { ProductItemComponent } from './product-item/product-item.component';
+import { CatalogueComponent } from './catalogue/catalogue.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProductItemComponent,
+    CatalogueComponent,
   ],
   imports: [
     BrowserModule,
