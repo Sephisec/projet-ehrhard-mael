@@ -4,7 +4,8 @@ import { SequelizeModule } from '@nestjs/sequelize';
 import { UsersModule } from './users/users.module';
 import { User } from './users/user.model';
 import { AuthModule } from './auth/auth.module';
-import { ProductsModule } from './products/products.module';
+import { CatalogueModule } from './products/catalogue.module';
+import { Product } from './products/product.model';
 
 @Module({
   imports: [
@@ -20,14 +21,14 @@ import { ProductsModule } from './products/products.module';
         dialectOptions: {
           ssl: { require: true },
         },
-        models: [User],
+        models: [User, Product],
       }),
       imports: [ConfigModule],
       inject: [ConfigService],
     }),
     UsersModule,
     AuthModule,
-    ProductsModule,
+    CatalogueModule,
   ],
   controllers: [],
   providers: [],

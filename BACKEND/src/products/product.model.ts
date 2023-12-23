@@ -1,5 +1,12 @@
-import { Column, DataType, Model, PrimaryKey } from 'sequelize-typescript';
+import {
+  Column,
+  DataType,
+  Model,
+  PrimaryKey,
+  Table,
+} from 'sequelize-typescript';
 
+@Table
 export class Product extends Model {
   @PrimaryKey
   @Column
