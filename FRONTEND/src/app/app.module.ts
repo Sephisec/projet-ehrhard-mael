@@ -8,7 +8,7 @@ import { JwtInterceptor } from './jwt.interceptor';
 import { AuthComponent } from './auth/auth.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { routes } from './routes';
+import { routesConstant } from './constants/routes.constant';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,7 @@ import { routes } from './routes';
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routesConstant),
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
