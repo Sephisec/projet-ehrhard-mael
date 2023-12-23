@@ -1,4 +1,5 @@
 import {
+  AutoIncrement,
   Column,
   DataType,
   Model,
@@ -9,6 +10,7 @@ import {
 @Table({ modelName: 'products', timestamps: false })
 export class Product extends Model {
   @PrimaryKey
+  @AutoIncrement
   @Column
   id: number;
 

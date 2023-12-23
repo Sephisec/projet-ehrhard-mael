@@ -3,6 +3,7 @@ import { InjectModel } from '@nestjs/sequelize';
 import { Product } from './product.model';
 import { Op } from 'sequelize';
 import { SearchDto } from './search.dto';
+import { CreateProductDto } from './create-product.dto';
 
 @Injectable()
 export class CatalogueService {
@@ -20,5 +21,9 @@ export class CatalogueService {
         },
       },
     });
+  }
+
+  createOne(payload: CreateProductDto) {
+    return this.catalogue.create({ ...payload });
   }
 }
