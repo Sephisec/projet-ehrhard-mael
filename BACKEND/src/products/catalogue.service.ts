@@ -1,6 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
 import { Product } from './product.model';
+import { Op } from 'sequelize';
+import { SearchDto } from './search.dto';
 
 @Injectable()
 export class CatalogueService {
@@ -10,10 +12,12 @@ export class CatalogueService {
     return this.catalogue.findAll();
   }
 
-  async findByName(name: string) {
-    return this.catalogue.findOne({
+  async findByName(searchOptions: SearchDto) {
+    return this.catalogue.findAll({
       where: {
-        name: name,
+        name: {
+          [Op.iLike]: `%${searchOptions.name}%`,
+        },
       },
     });
   }

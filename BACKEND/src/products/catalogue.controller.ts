@@ -1,5 +1,6 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Query } from '@nestjs/common';
 import { CatalogueService } from './catalogue.service';
+import { SearchDto } from './search.dto';
 
 @Controller('catalogue')
 export class CatalogueController {
@@ -7,5 +8,10 @@ export class CatalogueController {
   @Get()
   get() {
     return this.catalogueService.findAll();
+  }
+
+  @Get('/search')
+  getByName(@Query() searchDto: SearchDto) {
+    return this.catalogueService.findByName(searchDto);
   }
 }
