@@ -6,7 +6,7 @@ import {
   Table,
 } from 'sequelize-typescript';
 
-@Table
+@Table({ modelName: 'products', timestamps: false })
 export class Product extends Model {
   @PrimaryKey
   @Column
