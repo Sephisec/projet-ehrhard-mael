@@ -6,10 +6,17 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ProductItemComponent } from './product-item/product-item.component';
 import { CatalogueComponent } from './catalogue/catalogue.component';
 import { JwtInterceptor } from './jwt.interceptor';
+import { AuthComponent } from './auth/auth.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, ProductItemComponent, CatalogueComponent],
-  imports: [BrowserModule, HttpClientModule],
+  declarations: [
+    AppComponent,
+    ProductItemComponent,
+    CatalogueComponent,
+    AuthComponent,
+  ],
+  imports: [BrowserModule, HttpClientModule, FormsModule],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
   ],
