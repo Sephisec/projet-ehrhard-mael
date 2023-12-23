@@ -1,25 +1,21 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpParams} from "@angular/common/http";
-import {Product} from "../models/product.model";
-import {environment} from "../../environments/environment";
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Product } from '../models/product.model';
+import { environment } from '../../environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CatalogueService {
-
-  endpoint = `${environment.apiUrl}/catalogue`
+  endpoint = `${environment.apiUrl}/catalogue`;
   constructor(private readonly http: HttpClient) {}
 
-  getCatalogue()
-  {
+  getCatalogue() {
     return this.http.get<Product[]>(this.endpoint);
   }
 
-  searchCatalogue(searchTerm: string)
-  {
-    const params = new HttpParams({fromString: `name=${searchTerm}`})
+  searchCatalogue(searchTerm: string) {
+    const params = new HttpParams({ fromString: `name=${searchTerm}` });
     return this.http.get<Product[]>(this.endpoint, { params });
   }
-
 }
