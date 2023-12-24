@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { authGuard } from '../core/guards/auth.guard';
 import { CatalogueComponent } from './catalogue/catalogue.component';
-import { CatalogueSearchComponent } from './catalogue-search/catalogue-search.component';
+import { CatalogueWithSearchBarComponent } from './catalogue-with-search-bar/catalogue-with-search-bar.component';
 
 export const catalogueRoutes: Routes = [
   {
@@ -14,7 +14,7 @@ export const catalogueRoutes: Routes = [
       },
       {
         path: 'search',
-        component: CatalogueSearchComponent,
+        component: CatalogueWithSearchBarComponent,
       },
     ],
   },

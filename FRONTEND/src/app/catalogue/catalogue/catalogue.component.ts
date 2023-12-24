@@ -1,15 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CatalogueService } from '../../shared/services/catalogue.service';
-import { BaseCatalogueComponent } from '../base-catalogue.component';
+import { Observable } from 'rxjs';
+import { Product } from '../../shared/models/product.model';
 
 @Component({
   selector: 'app-catalogue',
   templateUrl: './catalogue.component.html',
   styleUrls: ['./catalogue.component.css'],
 })
-export class CatalogueComponent extends BaseCatalogueComponent {
-  constructor(catalogueService: CatalogueService) {
-    super(catalogueService);
+export class CatalogueComponent {
+  @Input() products$: Observable<Product[]>;
+  constructor(private readonly catalogueService: CatalogueService) {
     this.products$ = this.catalogueService.getCatalogue();
   }
 }

@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CatalogueSearchComponent } from './catalogue-search.component';
+import { CatalogueWithSearchBarComponent } from './catalogue-with-search-bar.component';
 
 describe('CatalogueSearchComponent', () => {
-  let component: CatalogueSearchComponent;
-  let fixture: ComponentFixture<CatalogueSearchComponent>;
+  let component: CatalogueWithSearchBarComponent;
+  let fixture: ComponentFixture<CatalogueWithSearchBarComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [CatalogueSearchComponent],
+      declarations: [CatalogueWithSearchBarComponent],
     });
-    fixture = TestBed.createComponent(CatalogueSearchComponent);
+    fixture = TestBed.createComponent(CatalogueWithSearchBarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

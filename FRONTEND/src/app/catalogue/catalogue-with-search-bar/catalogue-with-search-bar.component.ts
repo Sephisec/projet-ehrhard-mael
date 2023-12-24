@@ -1,22 +1,23 @@
 import { Component } from '@angular/core';
 import { CatalogueService } from '../../shared/services/catalogue.service';
-import { BaseCatalogueComponent } from '../base-catalogue.component';
 import {
   BehaviorSubject,
   debounceTime,
   distinctUntilChanged,
+  Observable,
   switchMap,
 } from 'rxjs';
+import { Product } from '../../shared/models/product.model';
 
 @Component({
-  selector: 'app-catalogue-search',
-  templateUrl: './catalogue-search.component.html',
-  styleUrls: ['./catalogue-search.component.css'],
+  selector: 'app-catalogue-with-search-bar',
+  templateUrl: './catalogue-with-search-bar.component.html',
+  styleUrls: ['./catalogue-with-search-bar.component.css'],
 })
-export class CatalogueSearchComponent extends BaseCatalogueComponent {
+export class CatalogueWithSearchBarComponent {
   searchTerm$ = new BehaviorSubject('');
-  constructor(catalogueService: CatalogueService) {
-    super(catalogueService);
+  products$: Observable<Product[]>;
+  constructor(private readonly catalogueService: CatalogueService) {
     this.products$ = this.searchTerm$.pipe(
       debounceTime(500),
       distinctUntilChanged(),
