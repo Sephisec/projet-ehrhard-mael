@@ -2,14 +2,14 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { ProductItemComponent } from './product-item/product-item.component';
-import { CatalogueComponent } from './catalogue/catalogue.component';
-import { JwtInterceptor } from './jwt.interceptor';
-import { AuthComponent } from './auth/auth.component';
+import { ProductItemComponent } from './components/product-item/product-item.component';
+import { CatalogueComponent } from './components/catalogue/catalogue.component';
+import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
+import { AuthComponent } from './components/auth/auth.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { routesConstant } from './constants/routes.constant';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { routesConstant } from './shared/constants/routes.constant';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { CatalogueService } from './catalogue.service';
+import { CatalogueService } from '../../shared/services/catalogue.service';
 import { Observable } from 'rxjs';
-import { Product } from '../models/product.model';
+import { Product } from '../../shared/models/product.model';
 
 @Component({
   selector: 'app-catalogue',

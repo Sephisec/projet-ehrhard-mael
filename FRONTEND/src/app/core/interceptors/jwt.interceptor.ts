@@ -6,7 +6,7 @@ import {
   HttpRequest,
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { TOKEN_KEY_NAME } from './constants/token-key-name.constant';
+import { TOKEN_KEY_NAME } from '../../shared/constants/token-key-name.constant';
 
 @Injectable()
 export class JwtInterceptor implements HttpInterceptor {
