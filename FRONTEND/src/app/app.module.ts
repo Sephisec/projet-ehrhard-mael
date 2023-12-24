@@ -12,6 +12,7 @@ import { appRoutes } from './app-routes.constant';
 import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
 import { CatalogueSearchComponent } from './catalogue/catalogue-search/catalogue-search.component';
 import { CatalogueModule } from './catalogue/catalogue.module';
+import { NgxsModule } from '@ngxs/store';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { CatalogueModule } from './catalogue/catalogue.module';
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
+    NgxsModule.forRoot(),
     CatalogueModule,
   ],
   providers: [
