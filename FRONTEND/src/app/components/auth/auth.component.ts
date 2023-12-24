@@ -13,8 +13,6 @@ export class AuthComponent {
   constructor(private readonly authService: AuthService) {}
 
   onLogin(username: string, password: string) {
-    this.authService
-      .signIn(username, password)
-      .subscribe(() => console.log('LOGGED'));
+    this.authService.signIn(username, password).subscribe();
   }
 }
