@@ -1,5 +1,8 @@
 <div class="product-container">
   <div *ngFor="let p of products$ | async" class="product-item">
-    <app-product-item [product]="p"></app-product-item>
+    <app-product-item
+      [product]="p"
+      (addToCartEvent)="addToCart($event)"
+    ></app-product-item>
   </div>
 </div>

@@ -1,8 +1,9 @@
 import { Product } from '../models/product.model';
+import { ProductWithQuantity } from '../models/product-state.model';
 
 export class AddProduct {
   static readonly type = '[Product] Add';
-  constructor(public payload: Product) {}
+  constructor(public payload: ProductWithQuantity) {}
 }
 
 export class IncrementProductQuantity {

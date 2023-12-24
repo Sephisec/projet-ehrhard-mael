@@ -26,13 +26,15 @@ export class ProductState {
     { payload }: AddProduct,
   ) {
     const state = getState();
-    const index = state.products.findIndex((p) => p.product.id === payload.id);
+    const index = state.products.findIndex(
+      (p) => p.product.id === payload.product.id,
+    );
     const productExists = index > -1;
     if (productExists) {
       dispatch(new IncrementProductQuantity(index));
     }
     patchState({
-      products: [...state.products, { product: payload, quantity: 1 }],
+      products: [...state.products, payload],
     });
   }
 
