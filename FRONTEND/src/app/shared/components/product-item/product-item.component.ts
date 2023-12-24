@@ -12,7 +12,7 @@ registerLocaleData(localeFr, 'fr');
 })
 export class ProductItemComponent {
   @Input() product: Product;
-  quantity: number;
+  quantity = 1;
   @Output() addToCartEvent = new EventEmitter<ProductWithQuantity>();
   addToCart(product: Product, quantity: number) {
     this.addToCartEvent.emit({ product, quantity });
