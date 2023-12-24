@@ -1,0 +1,18 @@
+.product-item {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 12px;
+  width: 300px;
+}
+
+.product-item h2 {
+  margin-top: 0;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.product-item p {
+  margin-bottom: 8px;
+  color: #666;
+}

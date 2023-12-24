@@ -1,5 +1,11 @@
-<nav>
-  <a routerLink="/login">Login</a><a routerLink="/catalogue">Catalogue</a>
+<nav class="navbar">
+  <div class="nav-left">
+    <a routerLink="/catalogue" class="nav-link">Catalogue</a>
+    <a routerLink="/catalogue/search" class="nav-link">Recherche</a>
+  </div>
+  <div class="nav-right">
+    <a routerLink="/login" class="nav-link">Login</a>
+  </div>
 </nav>
 
 <router-outlet></router-outlet>
