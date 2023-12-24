@@ -1,5 +1,5 @@
 <div class="product-item">
   <h2>{{ product.name }}</h2>
   <p>{{ product.description }}</p>
-  <p>Price: {{ product.price | currency }}</p>
+  <p>Price: {{ product.price | currency: 'EUR' : 'symbol' : '.2-2' : 'fr' }}</p>
 </div>
