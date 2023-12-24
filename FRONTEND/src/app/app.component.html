@@ -4,7 +4,9 @@
     <a routerLink="/catalogue/search" class="nav-link">Search</a>
   </div>
   <div class="nav-right">
-    <a routerLink="/login" class="nav-link">Login</a>
+    <a *ngIf="!authService.isLoggedIn()" routerLink="/login" class="nav-link"
+      >Login</a
+    >
   </div>
 </nav>
 
