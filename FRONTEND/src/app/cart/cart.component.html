@@ -1,0 +1,7 @@
+<div class="product-container">
+  <div *ngFor="let p of products$ | async" class="product-item">
+    <p>{{ p.product }}</p>
+    <p>{{ p.quantity }}</p>
+    <!--    <app-product-item [product]="p.product"></app-product-item>-->
+  </div>
+</div>

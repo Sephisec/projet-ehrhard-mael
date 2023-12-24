@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [ProductItemComponent, PageNotFoundComponent],
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   exports: [
     ProductItemComponent,
     PageNotFoundComponent,

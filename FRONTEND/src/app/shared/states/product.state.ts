@@ -5,6 +5,7 @@ import {
   IncrementProductQuantity,
   RemoveProduct,
 } from '../actions/product.action';
+import { Injectable } from '@angular/core';
 
 @State<ProductStateModel>({
   name: 'products',
@@ -12,6 +13,7 @@ import {
     products: [],
   },
 })
+@Injectable()
 export class ProductState {
   @Selector()
   static getProducts(state: ProductStateModel) {

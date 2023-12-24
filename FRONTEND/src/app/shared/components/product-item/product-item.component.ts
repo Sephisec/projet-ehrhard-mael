@@ -1,7 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Product } from '../../models/product.model';
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
+import { ProductWithQuantity } from '../../models/product-state.model';
 registerLocaleData(localeFr, 'fr');
 
 @Component({
@@ -11,4 +12,9 @@ registerLocaleData(localeFr, 'fr');
 })
 export class ProductItemComponent {
   @Input() product: Product;
+  quantity: number;
+  @Output() addToCartEvent = new EventEmitter<ProductWithQuantity>();
+  addToCart(product: Product, quantity: number) {
+    this.addToCartEvent.emit({ product, quantity });
+  }
 }

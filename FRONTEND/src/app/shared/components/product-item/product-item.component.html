@@ -2,4 +2,8 @@
   <h2>{{ product.name }}</h2>
   <p>{{ product.description }}</p>
   <p>Price: {{ product.price | currency: 'EUR' : 'symbol' : '.2-2' : 'fr' }}</p>
+  <div class="quantity-controls">
+    <input type="number" [(ngModel)]="quantity" min="1" step="1" />
+  </div>
+  <button (click)="addToCart(product, quantity)">Add to cart</button>
 </div>
