@@ -9,6 +9,7 @@ import { AuthComponent } from './auth/auth.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { routesConstant } from './constants/routes.constant';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { routesConstant } from './constants/routes.constant';
     ProductItemComponent,
     CatalogueComponent,
     AuthComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
