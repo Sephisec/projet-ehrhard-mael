@@ -16,6 +16,6 @@ export class CatalogueService {
 
   searchCatalogue(searchTerm: string) {
     const params = new HttpParams({ fromString: `name=${searchTerm}` });
-    return this.http.get<Product[]>(this.endpoint, { params });
+    return this.http.get<Product[]>(`${this.endpoint}/search`, { params });
   }
 }
