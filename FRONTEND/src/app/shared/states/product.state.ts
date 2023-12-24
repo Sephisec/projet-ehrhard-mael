@@ -31,7 +31,12 @@ export class ProductState {
     );
     const productExists = index > -1;
     if (productExists) {
-      dispatch(new IncrementProductQuantity(index));
+      dispatch(
+        new IncrementProductQuantity({
+          index: index,
+          quantity: payload.quantity,
+        }),
+      );
     } else {
       patchState({
         products: [...state.products, payload],
@@ -42,10 +47,12 @@ export class ProductState {
   @Action(IncrementProductQuantity)
   increment(
     { getState, patchState }: StateContext<ProductStateModel>,
-    { index }: IncrementProductQuantity,
+    { payload }: IncrementProductQuantity,
   ) {
     const state = getState();
-    state.products[index].quantity++;
+    const { index } = payload;
+    const { quantity } = payload;
+    state.products[index].quantity += quantity;
     patchState({ ...state });
   }
 

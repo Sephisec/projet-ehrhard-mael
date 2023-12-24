@@ -8,7 +8,7 @@ export class AddProduct {
 
 export class IncrementProductQuantity {
   static readonly type = '[Product] IncrementQuantity';
-  constructor(public index: number) {}
+  constructor(public payload: { index: number; quantity: number }) {}
 }
 
 export class RemoveProduct {
