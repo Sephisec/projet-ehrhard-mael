@@ -8,7 +8,7 @@ import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
 import { AuthComponent } from './components/auth/auth.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { appRoutes } from './shared/constants/app-routes.constant';
+import { appRoutes } from './app-routes.constant';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { CatalogueSearchComponent } from './catalogue/catalogue-search/catalogue-search.component';
 import { CatalogueModule } from './catalogue/catalogue.module';
