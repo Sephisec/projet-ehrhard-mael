@@ -32,10 +32,11 @@ export class ProductState {
     const productExists = index > -1;
     if (productExists) {
       dispatch(new IncrementProductQuantity(index));
+    } else {
+      patchState({
+        products: [...state.products, payload],
+      });
     }
-    patchState({
-      products: [...state.products, payload],
-    });
   }
 
   @Action(IncrementProductQuantity)
