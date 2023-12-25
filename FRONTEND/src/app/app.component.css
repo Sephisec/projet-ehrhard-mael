@@ -3,7 +3,6 @@
   padding: 10px 20px;
   color: #fff;
   display: flex;
-  justify-content: space-between;
 }
 
 .nav-link {
@@ -15,14 +14,4 @@
 
 .nav-link:hover {
   text-decoration: underline;
-}
-
-
-.nav-left {
-  display: flex;
-}
-
-.nav-right {
-  display: flex;
-  align-items: center;
 }

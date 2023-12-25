@@ -1,12 +1,8 @@
-/* Styles pour l'écran de connexion */
-
-/* Réinitialisation des marges et paddings */
 form {
   margin: 0;
   padding: 0;
 }
 
-/* Styles pour les champs de formulaire */
 form div {
   margin-bottom: 15px;
 }
@@ -17,7 +13,8 @@ label {
 }
 
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+input[type="email"] {
   width: 100%;
   padding: 8px;
   border-radius: 4px;

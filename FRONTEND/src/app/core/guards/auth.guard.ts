@@ -19,7 +19,7 @@ export const authGuard: CanActivateFn = (
   return router.navigate(['/login'], { queryParams: { returnUrl: state.url } });
 };
 
-export const loggedInGuard: CanActivateFn = () => {
+export const publicGuard: CanActivateFn = () => {
   const authService = inject(AuthService);
   const router = inject(Router);
   if (authService.isLoggedIn()) {
