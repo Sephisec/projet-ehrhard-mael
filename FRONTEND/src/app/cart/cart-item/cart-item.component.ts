@@ -10,7 +10,7 @@ import { Product } from '../../shared/models/product.model';
 export class CartItemComponent {
   @Input() productWithQuantity: ProductWithQuantity;
   @Output() toRemoveEvent = new EventEmitter<ProductWithQuantity>();
-  quantityToRemove: number;
+  quantityToRemove = 1;
 
   onRemove(productWithQuantity: Product, quantityToRemove: number) {
     this.toRemoveEvent.emit({

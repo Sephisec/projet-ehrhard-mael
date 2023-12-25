@@ -67,10 +67,10 @@ export class ProductState {
     );
     const productExists = index > -1;
     if (productExists) {
-      const updatedState = [...state.products];
+      let updatedState = [...state.products];
       updatedState[index].quantity -= payload.quantity;
       if (updatedState[index].quantity < 1) {
-        updatedState.splice(index, index);
+        updatedState = updatedState.splice(index, index);
       }
       patchState({ products: updatedState });
     }
