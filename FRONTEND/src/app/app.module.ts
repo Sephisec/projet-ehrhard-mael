@@ -12,6 +12,7 @@ import { SharedModule } from './shared/shared.module';
 import { HomeComponent } from './home/home.component';
 import { HomeModule } from './home/home.module';
 import { AuthModule } from './auth/auth.module';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, HomeComponent],
@@ -24,6 +25,7 @@ import { AuthModule } from './auth/auth.module';
     SharedModule,
     HomeModule,
     AuthModule,
+    NoopAnimationsModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
