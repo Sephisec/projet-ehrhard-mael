@@ -1,7 +1,8 @@
-import { Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
 import { User } from './user.model';
 import { RegisterDto } from '../auth/register.dto';
+import { ValidationError } from 'sequelize';
 
 @Injectable()
 export class UsersService {
@@ -20,7 +21,18 @@ export class UsersService {
   }
 
   async createOne(registerDto: RegisterDto) {
-    return this.userModel.create({ ...registerDto });
+    try {
+      const created = await this.userModel.create({ ...registerDto });
+      delete created.password;
+      return created;
+    } catch (e) {
+      if (e instanceof ValidationError) {
+        throw new BadRequestException(
+          'Sorry, this login is already in use. Please choose a different one.',
+        );
+      }
+      throw e;
+    }
   }
 
   async remove(id: string): Promise<void> {

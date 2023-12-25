@@ -1,4 +1,4 @@
-import { IsEmail, IsInt, IsString, Length } from 'class-validator';
+import { IsEmail, IsNumberString, IsString, Length } from 'class-validator';
 
 export class RegisterDto {
   @IsString()
@@ -10,8 +10,9 @@ export class RegisterDto {
   @IsString()
   address: string;
 
-  @IsInt()
-  postCode: number;
+  @IsNumberString()
+  @Length(5, 5, { message: 'Please enter a valid post code' })
+  postCode: string;
 
   @IsString()
   city: string;

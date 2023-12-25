@@ -1,4 +1,5 @@
 import {
+  AutoIncrement,
   Column,
   DataType,
   Model,
@@ -12,6 +13,7 @@ import {
 })
 export class User extends Model {
   @PrimaryKey
+  @AutoIncrement
   @Column
   id: number;
 
