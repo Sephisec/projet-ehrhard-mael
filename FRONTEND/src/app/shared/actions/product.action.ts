@@ -1,4 +1,3 @@
-import { Product } from '../models/product.model';
 import { ProductWithQuantity } from '../models/product-state.model';
 
 export class AddProduct {
@@ -11,8 +10,8 @@ export class IncrementProductQuantity {
   constructor(public payload: { index: number; quantity: number }) {}
 }
 
-export class RemoveProduct {
-  static readonly type = '[Product] Remove';
+export class DecrementProductQuantity {
+  static readonly type = '[Product] DecrementQuantity';
 
-  constructor(public payload: Product) {}
+  constructor(public payload: ProductWithQuantity) {}
 }

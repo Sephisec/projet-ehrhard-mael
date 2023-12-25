@@ -47,3 +47,12 @@
 .remove-button:hover {
   background-color: #d32f2f;
 }
+
+.actions input[type="number"] {
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+  width: 50px;
+  margin-right: 8px;
+}

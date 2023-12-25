@@ -1,0 +1,17 @@
+<div class="product-info">
+  <h2>{{ productWithQuantity.product.name }}</h2>
+  <p class="description">{{ productWithQuantity.product.description }}</p>
+  <p class="price">
+    Price: {{ productWithQuantity.product.price | currency: 'EUR' }}
+  </p>
+  <p class="quantity">Selected Quantity: {{ productWithQuantity.quantity }}</p>
+</div>
+<div class="actions">
+  <input type="number" [(ngModel)]="quantityToRemove" min="1" step="1" />
+  <button
+    class="remove-button"
+    (click)="onRemove(productWithQuantity.product, quantityToRemove)"
+  >
+    Remove
+  </button>
+</div>

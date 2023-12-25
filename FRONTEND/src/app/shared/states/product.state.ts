@@ -3,7 +3,7 @@ import { ProductStateModel } from '../models/product-state.model';
 import {
   AddProduct,
   IncrementProductQuantity,
-  RemoveProduct,
+  DecrementProductQuantity,
 } from '../actions/product.action';
 import { Injectable } from '@angular/core';
 
@@ -56,14 +56,23 @@ export class ProductState {
     patchState({ ...state });
   }
 
-  @Action(RemoveProduct)
+  @Action(DecrementProductQuantity)
   remove(
     { getState, patchState }: StateContext<ProductStateModel>,
-    { payload }: RemoveProduct,
+    { payload }: DecrementProductQuantity,
   ) {
     const state = getState();
-    patchState({
-      products: [...state.products.filter((p) => p.product.id !== payload.id)],
-    });
+    const index = state.products.findIndex(
+      (p) => p.product.id === payload.product.id,
+    );
+    const productExists = index > -1;
+    if (productExists) {
+      const updatedState = [...state.products];
+      updatedState[index].quantity -= payload.quantity;
+      if (updatedState[index].quantity < 1) {
+        updatedState.splice(index, index);
+      }
+      patchState({ products: updatedState });
+    }
   }
 }

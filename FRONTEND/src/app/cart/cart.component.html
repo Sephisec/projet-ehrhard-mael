@@ -1,13 +1,8 @@
 <div class="cart">
   <div *ngFor="let p of products$ | async" class="product-item">
-    <div class="product-info">
-      <h2>{{ p.product.name }}</h2>
-      <p class="description">{{ p.product.description }}</p>
-      <p class="price">Price: {{ p.product.price | currency: 'EUR' }}</p>
-      <p class="quantity">Selected Quantity: {{ p.quantity }}</p>
-    </div>
-    <div class="actions">
-      <button class="remove-button">Remove</button>
-    </div>
+    <app-cart-item
+      [productWithQuantity]="p"
+      (toRemoveEvent)="onRemoveFromCart($event)"
+    ></app-cart-item>
   </div>
 </div>
