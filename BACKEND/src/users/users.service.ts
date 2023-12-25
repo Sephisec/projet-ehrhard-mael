@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
 import { User } from './user.model';
+import { RegisterDto } from '../auth/register.dto';
 
 @Injectable()
 export class UsersService {
@@ -16,6 +17,10 @@ export class UsersService {
         login: login,
       },
     });
+  }
+
+  async createOne(registerDto: RegisterDto) {
+    return this.userModel.create({ ...registerDto });
   }
 
   async remove(id: string): Promise<void> {

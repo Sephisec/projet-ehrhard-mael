@@ -61,6 +61,7 @@ export class User extends Model {
 
   @Column({
     type: DataType.TEXT,
+    unique: true,
   })
   login: string;
 
