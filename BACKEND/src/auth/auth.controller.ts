@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { BadRequestException, Body, Controller, Post } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { LoginDto } from './login.dto';
 import { Public } from './public.decorator';
@@ -16,6 +16,9 @@ export class AuthController {
   @Public()
   @Post('/register')
   register(@Body() registerDto: RegisterDto) {
+    if (registerDto.password !== registerDto.confirmation) {
+      throw new BadRequestException("Password and confirmation don't match");
+    }
     return this.authService.register(registerDto);
   }
 }

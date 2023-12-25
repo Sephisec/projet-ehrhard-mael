@@ -1,4 +1,4 @@
-import { Equals, IsEmail, IsInt, IsString, Length } from 'class-validator';
+import { IsEmail, IsInt, IsString, Length } from 'class-validator';
 
 export class RegisterDto {
   @IsString()
@@ -30,7 +30,6 @@ export class RegisterDto {
   password: string;
 
   @IsString()
-  @Equals('password', { message: "Password and confirmation don't match" })
   confirmation: string;
 
   @IsString()
