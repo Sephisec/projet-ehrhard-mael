@@ -1,0 +1,38 @@
+/* Styles pour l'écran de connexion */
+
+/* Réinitialisation des marges et paddings */
+form {
+  margin: 0;
+  padding: 0;
+}
+
+/* Styles pour les champs de formulaire */
+form div {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2980b9;
+}

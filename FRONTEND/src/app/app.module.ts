@@ -9,9 +9,11 @@ import { appRoutes } from './app-routes.constant';
 import { CatalogueModule } from './catalogue/catalogue.module';
 import { CartModule } from './cart/cart.module';
 import { SharedModule } from './shared/shared.module';
+import { HomeComponent } from './home/home.component';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
-  declarations: [AppComponent, AuthComponent],
+  declarations: [AppComponent, AuthComponent, HomeComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -19,6 +21,7 @@ import { SharedModule } from './shared/shared.module';
     CartModule,
     CatalogueModule,
     SharedModule,
+    HomeModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

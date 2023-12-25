@@ -4,7 +4,7 @@ import { PageNotFoundComponent } from './shared/components/page-not-found/page-n
 import { loggedInGuard } from './core/guards/auth.guard';
 
 export const appRoutes: Routes = [
-  { path: '', redirectTo: 'catalogue', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'login', component: AuthComponent, canActivate: [loggedInGuard] },
   { path: '**', component: PageNotFoundComponent },
 ];
