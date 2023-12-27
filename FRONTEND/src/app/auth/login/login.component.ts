@@ -13,6 +13,8 @@ export class LoginComponent {
   constructor(private readonly authService: AuthService) {}
 
   onLogin(username: string, password: string) {
-    this.authService.signIn(username, password).subscribe();
+    if (password && username) {
+      this.authService.signIn(username, password).subscribe();
+    }
   }
 }
