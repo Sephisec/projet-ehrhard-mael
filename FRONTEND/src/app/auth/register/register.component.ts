@@ -31,13 +31,20 @@ export class RegisterComponent {
       login: ['', Validators.required],
       password: ['', Validators.required],
       confirmation: ['', Validators.required],
-      telephone: ['', [Validators.required, Validators.minLength(20)]],
+      telephone: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(20),
+          Validators.maxLength(20),
+        ],
+      ],
     });
   }
 
   onRegister() {
     if (this.registerForm.valid) {
-      this.authService.register(this.registerForm.value).subscribe();
+      this.authService.register(this.registerForm).subscribe();
     }
   }
 }

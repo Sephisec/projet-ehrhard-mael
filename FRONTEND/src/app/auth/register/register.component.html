@@ -101,7 +101,8 @@
       type="text"
       id="telephone"
       formControlName="telephone"
-      minlength="1"
+      minlength="20"
+      maxlength="20"
     />
     <div
       *ngIf="
@@ -111,8 +112,8 @@
       "
       class="alert alert-danger"
     >
-      <div *ngIf="registerForm.get('telephone')?.errors?.['minlength']">
-        Please enter a 20 digits phone number.
+      <div *ngIf="registerForm.get('telephone')?.errors?.['minLength']">
+        Please enter a 20 digits max phone number.
       </div>
     </div>
   </div>

@@ -34,6 +34,7 @@ export class AuthService {
   }
 
   register(form: FormGroup) {
+    console.log(form.value);
     return this.http
       .post<AuthResponse>(`${this.endpoint}/register`, { ...form.value })
       .pipe(
