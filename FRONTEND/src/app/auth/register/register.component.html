@@ -79,7 +79,7 @@
           registerForm.get('sex')?.errors?.['maxLength']
         "
       >
-        Please enter a character
+        Please enter one single character.
       </div>
     </div>
   </div>
@@ -97,7 +97,24 @@
   </div>
   <div>
     <label for="telephone">Telephone*</label>
-    <input type="text" id="telephone" formControlName="telephone" />
+    <input
+      type="text"
+      id="telephone"
+      formControlName="telephone"
+      minlength="1"
+    />
+    <div
+      *ngIf="
+        registerForm.get('telephone')?.invalid &&
+        (registerForm.get('telephone')?.dirty ||
+          registerForm.get('telephone')?.touched)
+      "
+      class="alert alert-danger"
+    >
+      <div *ngIf="registerForm.get('telephone')?.errors?.['minlength']">
+        Please enter a 20 digits phone number.
+      </div>
+    </div>
   </div>
   <div>
     <button type="submit">Register</button>

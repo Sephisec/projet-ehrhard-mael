@@ -5,7 +5,7 @@ import { tap } from 'rxjs';
 import { TOKEN_KEY_NAME } from '../constants/token-key-name.constant';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthResponse } from '../models/auth-response.model';
-import { RegisterDto } from '../../auth/register/register.dto';
+import { FormGroup } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root',
@@ -33,9 +33,9 @@ export class AuthService {
       );
   }
 
-  register(dto: RegisterDto) {
+  register(form: FormGroup) {
     return this.http
-      .post<AuthResponse>(`${this.endpoint}/register`, { ...dto })
+      .post<AuthResponse>(`${this.endpoint}/register`, { ...form.value })
       .pipe(
         tap((res) => {
           localStorage.setItem(TOKEN_KEY_NAME, res.access_token);

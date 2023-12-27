@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { RegisterDto } from './register.dto';
 import { AuthService } from '../../shared/services/auth.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -10,13 +9,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class RegisterComponent {
   registerForm: FormGroup;
-  registerDto: RegisterDto;
 
   constructor(
     private readonly authService: AuthService,
     private readonly formBuilder: FormBuilder,
   ) {
-    this.registerDto = new RegisterDto();
     this.registerForm = this.formBuilder.group({
       firstname: ['', Validators.required],
       lastname: ['', Validators.required],
@@ -34,13 +31,13 @@ export class RegisterComponent {
       login: ['', Validators.required],
       password: ['', Validators.required],
       confirmation: ['', Validators.required],
-      telephone: ['', Validators.required],
+      telephone: ['', [Validators.required, Validators.minLength(20)]],
     });
   }
 
   onRegister() {
     if (this.registerForm.valid) {
-      this.authService.register(this.registerDto).subscribe();
+      this.authService.register(this.registerForm.value).subscribe();
     }
   }
 }
