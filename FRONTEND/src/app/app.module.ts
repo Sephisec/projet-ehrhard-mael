@@ -13,9 +13,16 @@ import { HomeComponent } from './home/home.component';
 import { HomeModule } from './home/home.module';
 import { AuthModule } from './auth/auth.module';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { PaymentConfirmationDialogComponent } from './cart/payment-confirmation-dialog/payment-confirmation-dialog.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, HomeComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    HomeComponent,
+    PaymentConfirmationDialogComponent,
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -26,6 +33,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     HomeModule,
     AuthModule,
     NoopAnimationsModule,
+    MatButtonModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

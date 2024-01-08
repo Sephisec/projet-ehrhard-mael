@@ -4,6 +4,7 @@ import {
   AddProduct,
   IncrementProductQuantity,
   DecrementProductQuantity,
+  ClearCart,
 } from '../actions/product.action';
 import { Injectable } from '@angular/core';
 
@@ -74,5 +75,10 @@ export class ProductState {
       }
       patchState({ products: updatedState });
     }
+  }
+
+  @Action(ClearCart)
+  clearCart({ patchState }: StateContext<ProductStateModel>) {
+    patchState({ products: [] });
   }
 }

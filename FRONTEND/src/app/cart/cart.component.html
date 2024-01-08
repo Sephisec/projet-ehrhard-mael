@@ -6,3 +6,6 @@
     ></app-cart-item>
   </div>
 </div>
+<div *ngIf="(products$ | async)!.length > 0">
+  <button (click)="onPay()">Confirm Payment</button>
+</div>

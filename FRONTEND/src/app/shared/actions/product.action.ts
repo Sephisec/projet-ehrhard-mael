@@ -15,3 +15,7 @@ export class DecrementProductQuantity {
 
   constructor(public payload: ProductWithQuantity) {}
 }
+
+export class ClearCart {
+  static readonly type = '[Product] ClearCart';
+}
